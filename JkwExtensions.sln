@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29411.108
+VisualStudioVersion = 16.0.29512.175
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JkwExtensions", "JkwExtensions\JkwExtensions.csproj", "{46011633-DC8F-4AD3-AA9C-821BCCC2840E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JkwExtensions", "JkwExtensions\JkwExtensions.csproj", "{745AC568-06A4-403F-95AD-F4F9737E6E12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{46011633-DC8F-4AD3-AA9C-821BCCC2840E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{46011633-DC8F-4AD3-AA9C-821BCCC2840E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{46011633-DC8F-4AD3-AA9C-821BCCC2840E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{46011633-DC8F-4AD3-AA9C-821BCCC2840E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{745AC568-06A4-403F-95AD-F4F9737E6E12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{745AC568-06A4-403F-95AD-F4F9737E6E12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{745AC568-06A4-403F-95AD-F4F9737E6E12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{745AC568-06A4-403F-95AD-F4F9737E6E12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E1D415A6-5DED-4551-AAE7-CB2E86A8E650}
+		SolutionGuid = {3CE861D6-DE58-420F-B5E6-F07020A0C411}
 	EndGlobalSection
 EndGlobal
