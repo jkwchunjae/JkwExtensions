@@ -83,5 +83,197 @@ namespace JkwExtensions
 
             await Task.WhenAll(tasks);
         }
+
+        public static int? MaxOrNull<T>(this IEnumerable<T> source, Func<T, int> func)
+        {
+            if (source?.Any() ?? false)
+            {
+                return source.Max(func);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static int? MaxOrNull(this IEnumerable<int> source)
+        {
+            if (source?.Any() ?? false)
+            {
+                return source.Max();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static long? MaxOrNull<T>(this IEnumerable<T> source, Func<T, long> func)
+        {
+            if (source?.Any() ?? false)
+            {
+                return source.Max(func);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static long? MaxOrNull(this IEnumerable<long> source)
+        {
+            if (source?.Any() ?? false)
+            {
+                return source.Max();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static double? MaxOrNull<T>(this IEnumerable<T> source, Func<T, double> func)
+        {
+            if (source?.Any() ?? false)
+            {
+                return source.Max(func);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static double? MaxOrNull(this IEnumerable<double> source)
+        {
+            if (source?.Any() ?? false)
+            {
+                return source.Max();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static float? MaxOrNull<T>(this IEnumerable<T> source, Func<T, float> func)
+        {
+            if (source?.Any() ?? false)
+            {
+                return source.Max(func);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static float? MaxOrNull(this IEnumerable<float> source)
+        {
+            if (source?.Any() ?? false)
+            {
+                return source.Max();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static int? MinOrNull<T>(this IEnumerable<T> source, Func<T, int> func)
+        {
+            if (source?.Any() ?? false)
+            {
+                return source.Min(func);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static int? MinOrNull(this IEnumerable<int> source)
+        {
+            if (source?.Any() ?? false)
+            {
+                return source.Min();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static long? MinOrNull<T>(this IEnumerable<T> source, Func<T, long> func)
+        {
+            if (source?.Any() ?? false)
+            {
+                return source.Min(func);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static long? MinOrNull(this IEnumerable<long> source)
+        {
+            if (source?.Any() ?? false)
+            {
+                return source.Min();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static double? MinOrNull<T>(this IEnumerable<T> source, Func<T, double> func)
+        {
+            if (source?.Any() ?? false)
+            {
+                return source.Min(func);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static double? MinOrNull(this IEnumerable<double> source)
+        {
+            if (source?.Any() ?? false)
+            {
+                return source.Min();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static float? MinOrNull<T>(this IEnumerable<T> source, Func<T, float> func)
+        {
+            if (source?.Any() ?? false)
+            {
+                return source.Min(func);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static float? MinOrNull(this IEnumerable<float> source)
+        {
+            if (source?.Any() ?? false)
+            {
+                return source.Min();
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
