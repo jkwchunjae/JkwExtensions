@@ -84,6 +84,28 @@ namespace JkwExtensions
             await Task.WhenAll(tasks);
         }
 
+        public static async Task<IEnumerable<T>> WhenAll<T>(this IEnumerable<Task<T>> source)
+        {
+            return await Task.WhenAll(source);
+        }
+
+        public static async Task WhenAll<T>(this IEnumerable<Task> source)
+        {
+            await Task.WhenAll(source);
+        }
+
+        public static async Task<Task<T>> WhenAny<T>(this IEnumerable<Task<T>> source)
+        {
+            return await Task.WhenAny(source);
+        }
+
+        public static async Task<Task> WhenAny<T>(this IEnumerable<Task> source)
+        {
+            return await Task.WhenAny(source);
+        }
+
+        #region MaxOrNull, MinOrNull
+
         public static int? MaxOrNull<T>(this IEnumerable<T> source, Func<T, int> func)
         {
             if (source?.Any() ?? false)
@@ -275,5 +297,7 @@ namespace JkwExtensions
                 return null;
             }
         }
+
+        #endregion
     }
 }
