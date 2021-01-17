@@ -320,27 +320,12 @@ namespace JkwExtensions
 
         public static TResult Reduce<TSource, TResult>(this IEnumerable<TSource> source, TResult initValue, Func<TResult, TSource, TResult> fn)
         {
-            var value = initValue;
-
-            foreach (var item in source)
-            {
-                value = fn(value, item);
-            }
-
-            return value;
+            return Reduce(source, initValue, (value, item, index, list) => fn(value, item));
         }
 
         public static TResult Reduce<TSource, TResult>(this IEnumerable<TSource> source, TResult initValue, Func<TResult, TSource, int, TResult> fn)
         {
-            var value = initValue;
-
-            var index = 0;
-            foreach (var item in source)
-            {
-                value = fn(value, item, index++);
-            }
-
-            return value;
+            return Reduce(source, initValue, (value, item, index, list) => fn(value, item, index));
         }
 
         public static TResult Reduce<TSource, TResult>(this IEnumerable<TSource> source, TResult initValue, Func<TResult, TSource, int, IEnumerable<TSource>, TResult> fn)
@@ -356,29 +341,14 @@ namespace JkwExtensions
             return value;
         }
 
-        public static async Task<TResult> ReduceAsync<TSource, TResult>(this IEnumerable<TSource> source, TResult initValue, Func<TResult, TSource, Task<TResult>> fn)
+        public static Task<TResult> ReduceAsync<TSource, TResult>(this IEnumerable<TSource> source, TResult initValue, Func<TResult, TSource, Task<TResult>> fn)
         {
-            var value = initValue;
-
-            foreach (var item in source)
-            {
-                value = await fn(value, item);
-            }
-
-            return value;
+            return ReduceAsync(source, initValue, (value, item, index, list) => fn(value, item));
         }
 
-        public static async Task<TResult> ReduceAsync<TSource, TResult>(this IEnumerable<TSource> source, TResult initValue, Func<TResult, TSource, int, Task<TResult>> fn)
+        public static Task<TResult> ReduceAsync<TSource, TResult>(this IEnumerable<TSource> source, TResult initValue, Func<TResult, TSource, int, Task<TResult>> fn)
         {
-            var value = initValue;
-
-            var index = 0;
-            foreach (var item in source)
-            {
-                value = await fn(value, item, index++);
-            }
-
-            return value;
+            return ReduceAsync(source, initValue, (value, item, index, list) => fn(value, item, index));
         }
 
         public static async Task<TResult> ReduceAsync<TSource, TResult>(this IEnumerable<TSource> source, TResult initValue, Func<TResult, TSource, int, IEnumerable<TSource>, Task<TResult>> fn)
