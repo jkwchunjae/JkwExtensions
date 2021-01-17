@@ -7,6 +7,8 @@ namespace JkwExtensions
 {
     public static class EnumerableExtensions
     {
+        #region Random
+
         public static T GetRandom<T>(this IEnumerable<T> source, Func<T, double> getWeight = null)
         {
             getWeight = getWeight ?? (x => 1);
@@ -34,6 +36,10 @@ namespace JkwExtensions
                 .Select(x => x.T);
         }
 
+        #endregion
+
+        #region Empty
+
         public static bool Empty<T>(this IEnumerable<T> source)
         {
             return !source.Any();
@@ -43,6 +49,10 @@ namespace JkwExtensions
         {
             return !source.Any(predicate);
         }
+
+        #endregion
+
+        #region ForEach
 
         public static void ForEach<T>(this IEnumerable<T> source, Action<T> action)
         {
@@ -84,6 +94,10 @@ namespace JkwExtensions
             await Task.WhenAll(tasks);
         }
 
+        #endregion
+
+        #region When *
+
         public static async Task<IEnumerable<T>> WhenAll<T>(this IEnumerable<Task<T>> source)
         {
             return await Task.WhenAll(source);
@@ -103,6 +117,8 @@ namespace JkwExtensions
         {
             return await Task.WhenAny(source);
         }
+
+        #endregion
 
         #region MaxOrNull, MinOrNull
 
