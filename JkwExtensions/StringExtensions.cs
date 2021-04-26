@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
@@ -139,5 +140,18 @@ namespace JkwExtensions
         {
             return Enumerable.Range(1, repeatCount).Select(x => str).StringJoin("");
         }
+
+        private static char[] _invalidFileNameChars = Path.GetInvalidFileNameChars();
+        public static bool HasInvalidFileNameChar(this string fileName)
+        {
+            return fileName.Any(chr => _invalidFileNameChars.Contains(chr));
+        }
+
+        private static char[] _invalidPathChars = Path.GetInvalidPathChars();
+        public static bool HasInvalidPathChar(this string path)
+        {
+            return path.Any(chr => _invalidPathChars.Contains(chr));
+        }
+
     }
 }
