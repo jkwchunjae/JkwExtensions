@@ -9,7 +9,7 @@ namespace JkwExtensions
     {
         public static double StandardDeviation(this IEnumerable<double> source)
         {
-            if (source.Any())
+            if (source.Empty())
                 return 0;
 
             double average = source.Average();
