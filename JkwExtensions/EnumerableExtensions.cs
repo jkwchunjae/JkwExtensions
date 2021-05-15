@@ -103,7 +103,7 @@ namespace JkwExtensions
             return await Task.WhenAll(source);
         }
 
-        public static async Task WhenAll<T>(this IEnumerable<Task> source)
+        public static async Task WhenAll(this IEnumerable<Task> source)
         {
             await Task.WhenAll(source);
         }
@@ -113,7 +113,7 @@ namespace JkwExtensions
             return await Task.WhenAny(source);
         }
 
-        public static async Task<Task> WhenAny<T>(this IEnumerable<Task> source)
+        public static async Task<Task> WhenAny(this IEnumerable<Task> source)
         {
             return await Task.WhenAny(source);
         }
