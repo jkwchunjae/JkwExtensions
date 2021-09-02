@@ -62,6 +62,16 @@ namespace JkwExtensions
             }
         }
 
+        public static void ForEach<T>(this IEnumerable<T> source, Action<T, int> action)
+        {
+            var index = 0;
+            foreach (var item in source)
+            {
+                action(item, index);
+                index++;
+            }
+        }
+
         public static void ForEach<T>(this IEnumerable<T> source, Action<T> action, ICollection<(T Item, Exception Exception)> exceptions)
         {
             foreach (var item in source)
@@ -73,6 +83,26 @@ namespace JkwExtensions
                 catch (Exception ex)
                 {
                     exceptions?.Add((item, ex));
+                }
+            }
+        }
+
+        public static void ForEach<T>(this IEnumerable<T> source, Action<T, int> action, ICollection<(T Item, int index, Exception Exception)> exceptions)
+        {
+            var index = 0;
+            foreach (var item in source)
+            {
+                try
+                {
+                    action(item, index);
+                }
+                catch (Exception ex)
+                {
+                    exceptions?.Add((item, index, ex));
+                }
+                finally
+                {
+                    index++;
                 }
             }
         }
