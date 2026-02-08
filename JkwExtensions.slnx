@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="JkwExtensions\JkwExtensions.csproj" Type="Classic C#" />
+  <Properties>
+    <Property Name="Configuration|Debug|0" Value="Debug" />
+    <Property Name="Configuration|Release|0" Value="Release" />
+    <Property Name="Platform|Any CPU|0" Value="Any CPU" />
+  </Properties>
+</Solution>
