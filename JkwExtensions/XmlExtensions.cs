@@ -89,7 +89,7 @@ namespace JkwExtensions
             return changedValue;
         }
 
-        public static float GetLong(this XElement xmlNode, string attributeName, long defaultValue = 0)
+        public static long GetLong(this XElement xmlNode, string attributeName, long defaultValue = 0)
         {
             long changedValue = defaultValue;
             if (xmlNode.NodeType != XmlNodeType.Element)

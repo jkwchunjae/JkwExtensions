@@ -42,7 +42,7 @@ namespace JkwExtensions
             }
             set
             {
-                base[key] = DefaultValue;
+                base[key] = value;
             }
         }
     }
